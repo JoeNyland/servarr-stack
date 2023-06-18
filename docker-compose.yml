@@ -15,5 +15,21 @@ services:
     volumes:
       - prowlarr:/config
 
+  radarr:
+    container_name: radarr
+    image: cr.hotio.dev/hotio/radarr
+    restart: unless-stopped
+    ports:
+      - "7878:7878"
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - UMASK=002
+      - TZ=Europe/London
+    volumes:
+      - radarr:/config
+      - /tank:/tank
+
 volumes:
   prowlarr:
+  radarr:
