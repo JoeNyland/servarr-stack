@@ -45,7 +45,23 @@ services:
       - sonarr:/config
       - /tank:/tank
 
+  lidarr:
+    container_name: lidarr
+    image: cr.hotio.dev/hotio/lidarr
+    restart: unless-stopped
+    ports:
+      - "8686:8686"
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - UMASK=002
+      - TZ=Europe/London
+    volumes:
+      - lidarr:/config
+      - /tank:/tank
+
 volumes:
   prowlarr:
   radarr:
   sonarr:
+  lidarr:
