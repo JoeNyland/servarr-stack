@@ -2,7 +2,7 @@ version: "3"
 
 services:
   prowlarr:
-    image: cr.hotio.dev/hotio/prowlarr
+    image: ghcr.io/hotio/prowlarr
     container_name: prowlarr
     restart: unless-stopped
     ports:
@@ -17,7 +17,7 @@ services:
 
   radarr:
     container_name: radarr
-    image: cr.hotio.dev/hotio/radarr
+    image: ghcr.io/hotio/radarr
     restart: unless-stopped
     ports:
       - "7878:7878"
@@ -31,7 +31,7 @@ services:
       - /tank:/tank
 
   sonarr:
-    image: cr.hotio.dev/hotio/sonarr
+    image: ghcr.io/hotio/sonarr
     container_name: sonarr
     restart: unless-stopped
     ports:
@@ -47,7 +47,7 @@ services:
 
   lidarr:
     container_name: lidarr
-    image: cr.hotio.dev/hotio/lidarr
+    image: ghcr.io/hotio/lidarr
     restart: unless-stopped
     ports:
       - "8686:8686"
@@ -62,7 +62,7 @@ services:
 
   whisparr:
     container_name: whisparr
-    image: cr.hotio.dev/hotio/whisparr
+    image: ghcr.io/hotio/whisparr
     restart: unless-stopped
     ports:
       - "6969:6969"
