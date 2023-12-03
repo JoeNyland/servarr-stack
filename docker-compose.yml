@@ -75,9 +75,25 @@ services:
       - whisparr:/config
       - /tank:/tank
 
+  bazarr:
+    container_name: bazarr
+    image: ghcr.io/hotio/bazarr
+    restart: unless-stopped
+    ports:
+      - "6767:6767"
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - UMASK=002
+      - TZ=Europe/London
+    volumes:
+      - bazarr:/config
+      - /tank:/tank
+
 volumes:
   prowlarr:
   radarr:
   sonarr:
   lidarr:
   whisparr:
+  bazarr:
