@@ -20,7 +20,7 @@ services:
     image: ghcr.io/hotio/radarr
     restart: unless-stopped
     ports:
-      - "7878:7878"
+      - 7878:7878
     environment:
       - PUID=1000
       - PGID=1000
@@ -50,7 +50,7 @@ services:
     image: ghcr.io/hotio/lidarr
     restart: unless-stopped
     ports:
-      - "8686:8686"
+      - 8686:8686
     environment:
       - PUID=1000
       - PGID=1000
@@ -65,7 +65,7 @@ services:
     image: ghcr.io/hotio/whisparr
     restart: unless-stopped
     ports:
-      - "6969:6969"
+      - 6969:6969
     environment:
       - PUID=1000
       - PGID=1000
@@ -80,7 +80,7 @@ services:
     image: ghcr.io/hotio/bazarr
     restart: unless-stopped
     ports:
-      - "6767:6767"
+      - 6767:6767
     environment:
       - PUID=1000
       - PGID=1000
