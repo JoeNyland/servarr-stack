@@ -95,3 +95,4 @@ services:
       - /tank/docker/bazarr:/config
       - /tank/media/movies:/tank/media/movies
       - /tank/media/tv:/tank/media/tv
+      - /tank/media/sport:/tank/media/sport
