@@ -13,7 +13,7 @@ services:
       UMASK: 002
       TZ: Europe/London
     volumes:
-      - prowlarr:/config
+      - /tank/docker/prowlarr:/config
 
   radarr:
     container_name: radarr
@@ -27,7 +27,7 @@ services:
       UMASK: 002
       TZ: Europe/London
     volumes:
-      - radarr:/config
+      - /tank/docker/radarr:/config
       - /tank:/tank
 
   sonarr:
@@ -42,7 +42,7 @@ services:
       UMASK: 002
       TZ: Europe/London
     volumes:
-      - sonarr:/config
+      - /tank/docker/sonarr:/config
       - /tank:/tank
 
   lidarr:
@@ -57,7 +57,7 @@ services:
       UMASK: 002
       TZ: Europe/London
     volumes:
-      - lidarr:/config
+      - /tank/docker/lidarr:/config
       - /tank:/tank
 
   whisparr:
@@ -72,7 +72,7 @@ services:
       UMASK: 002
       TZ: Europe/London
     volumes:
-      - whisparr:/config
+      - /tank/docker/whisparr:/config
       - /tank:/tank
 
   bazarr:
@@ -87,13 +87,5 @@ services:
       UMASK: 002
       TZ: Europe/London
     volumes:
-      - bazarr:/config
+      - /tank/docker/bazarr:/config
       - /tank:/tank
-
-volumes:
-  prowlarr:
-  radarr:
-  sonarr:
-  lidarr:
-  whisparr:
-  bazarr:
