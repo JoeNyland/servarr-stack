@@ -46,6 +46,7 @@ services:
       - /tank/docker/sonarr:/config
       - /tank/downloads:/tank/downloads
       - /tank/media/tv:/tank/media/tv
+      - /tank/media/sport:/tank/media/sport
 
   lidarr:
     container_name: lidarr
