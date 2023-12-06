@@ -28,7 +28,8 @@ services:
       TZ: Europe/London
     volumes:
       - /tank/docker/radarr:/config
-      - /tank:/tank
+      - /tank/downloads:/tank/downloads
+      - /tank/media/movies:/tank/media/movies
 
   sonarr:
     image: ghcr.io/hotio/sonarr
@@ -43,7 +44,8 @@ services:
       TZ: Europe/London
     volumes:
       - /tank/docker/sonarr:/config
-      - /tank:/tank
+      - /tank/downloads:/tank/downloads
+      - /tank/media/tv:/tank/media/tv
 
   lidarr:
     container_name: lidarr
@@ -58,7 +60,8 @@ services:
       TZ: Europe/London
     volumes:
       - /tank/docker/lidarr:/config
-      - /tank:/tank
+      - /tank/downloads:/tank/downloads
+      - /tank/media/music:/tank/media/music
 
   whisparr:
     container_name: whisparr
@@ -73,7 +76,8 @@ services:
       TZ: Europe/London
     volumes:
       - /tank/docker/whisparr:/config
-      - /tank:/tank
+      - /tank/downloads:/tank/downloads
+      - /tank/media/xxx:/tank/media/xxx
 
   bazarr:
     container_name: bazarr
@@ -88,4 +92,5 @@ services:
       TZ: Europe/London
     volumes:
       - /tank/docker/bazarr:/config
-      - /tank:/tank
+      - /tank/media/movies:/tank/media/movies
+      - /tank/media/tv:/tank/media/tv
