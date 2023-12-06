@@ -8,10 +8,10 @@ services:
     ports:
       - 9696:9696
     environment:
-      - PUID=1000
-      - PGID=1000
-      - UMASK=002
-      - TZ=Europe/London
+      PUID: 1000
+      PGID: 1000
+      UMASK: 002
+      TZ: Europe/London
     volumes:
       - prowlarr:/config
 
@@ -22,10 +22,10 @@ services:
     ports:
       - 7878:7878
     environment:
-      - PUID=1000
-      - PGID=1000
-      - UMASK=002
-      - TZ=Europe/London
+      PUID: 1000
+      PGID: 1000
+      UMASK: 002
+      TZ: Europe/London
     volumes:
       - radarr:/config
       - /tank:/tank
@@ -37,10 +37,10 @@ services:
     ports:
       - 8989:8989
     environment:
-      - PUID=1000
-      - PGID=1000
-      - UMASK=002
-      - TZ=Europe/London
+      PUID: 1000
+      PGID: 1000
+      UMASK: 002
+      TZ: Europe/London
     volumes:
       - sonarr:/config
       - /tank:/tank
@@ -52,10 +52,10 @@ services:
     ports:
       - 8686:8686
     environment:
-      - PUID=1000
-      - PGID=1000
-      - UMASK=002
-      - TZ=Europe/London
+      PUID: 1000
+      PGID: 1000
+      UMASK: 002
+      TZ: Europe/London
     volumes:
       - lidarr:/config
       - /tank:/tank
@@ -67,10 +67,10 @@ services:
     ports:
       - 6969:6969
     environment:
-      - PUID=1000
-      - PGID=1000
-      - UMASK=002
-      - TZ=Europe/London
+      PUID: 1000
+      PGID: 1000
+      UMASK: 002
+      TZ: Europe/London
     volumes:
       - whisparr:/config
       - /tank:/tank
@@ -82,10 +82,10 @@ services:
     ports:
       - 6767:6767
     environment:
-      - PUID=1000
-      - PGID=1000
-      - UMASK=002
-      - TZ=Europe/London
+      PUID: 1000
+      PGID: 1000
+      UMASK: 002
+      TZ: Europe/London
     volumes:
       - bazarr:/config
       - /tank:/tank
