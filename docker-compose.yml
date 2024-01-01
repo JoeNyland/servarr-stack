@@ -28,7 +28,6 @@ services:
       TZ: Europe/London
     volumes:
       - /tank/containers/radarr:/config
-      - /tank/downloads:/tank/downloads
       - /tank/media/movies:/tank/media/movies
 
   sonarr:
@@ -44,7 +43,6 @@ services:
       TZ: Europe/London
     volumes:
       - /tank/containers/sonarr:/config
-      - /tank/downloads:/tank/downloads
       - /tank/media/tv:/tank/media/tv
       - /tank/media/sport:/tank/media/sport
 
@@ -61,7 +59,6 @@ services:
       TZ: Europe/London
     volumes:
       - /tank/containers/lidarr:/config
-      - /tank/downloads:/tank/downloads
       - /tank/media/music:/tank/media/music
 
   whisparr:
@@ -77,7 +74,6 @@ services:
       TZ: Europe/London
     volumes:
       - /tank/containers/whisparr:/config
-      - /tank/downloads:/tank/downloads
       - /tank/media/xxx:/tank/media/xxx
 
   bazarr:
