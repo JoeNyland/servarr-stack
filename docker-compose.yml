@@ -74,7 +74,7 @@ services:
       TZ: Europe/London
     volumes:
       - /tank/containers/whisparr:/config
-      - /tank/media/xxx:/tank/media/xxx
+      - /tank/media/xxx/videos:/tank/media/xxx/videos
 
   bazarr:
     container_name: bazarr
