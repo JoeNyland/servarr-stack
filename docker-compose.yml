@@ -13,7 +13,7 @@ services:
       UMASK: 002
       TZ: Europe/London
     volumes:
-      - /tank/containers/prowlarr:/config
+      - /containers/prowlarr:/config
 
   radarr:
     container_name: radarr
@@ -27,7 +27,7 @@ services:
       UMASK: 002
       TZ: Europe/London
     volumes:
-      - /tank/containers/radarr:/config
+      - /containers/radarr:/config
       - /tank/media/movies:/tank/media/movies
 
   sonarr:
@@ -42,7 +42,7 @@ services:
       UMASK: 002
       TZ: Europe/London
     volumes:
-      - /tank/containers/sonarr:/config
+      - /containers/sonarr:/config
       - /tank/media/tv:/tank/media/tv
       - /tank/media/sport:/tank/media/sport
 
@@ -58,7 +58,7 @@ services:
       UMASK: 002
       TZ: Europe/London
     volumes:
-      - /tank/containers/lidarr:/config
+      - /containers/lidarr:/config
       - /tank/media/music:/tank/media/music
 
   whisparr:
@@ -73,5 +73,5 @@ services:
       UMASK: 002
       TZ: Europe/London
     volumes:
-      - /tank/containers/whisparr:/config
+      - /containers/whisparr:/config
       - /tank/media/xxx/videos:/tank/media/xxx/videos
