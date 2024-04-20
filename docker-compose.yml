@@ -5,6 +5,7 @@ services:
     image: ghcr.io/hotio/prowlarr
     container_name: prowlarr
     restart: unless-stopped
+    network_mode: host
     ports:
       - 9696:9696
     labels:
@@ -23,6 +24,7 @@ services:
     container_name: radarr
     image: ghcr.io/hotio/radarr
     restart: unless-stopped
+    network_mode: host
     ports:
       - 7878:7878
     labels:
@@ -42,6 +44,7 @@ services:
     image: ghcr.io/hotio/sonarr
     container_name: sonarr
     restart: unless-stopped
+    network_mode: host
     ports:
       - 8989:8989
     labels:
@@ -62,6 +65,7 @@ services:
     container_name: lidarr
     image: ghcr.io/hotio/lidarr
     restart: unless-stopped
+    network_mode: host
     ports:
       - 8686:8686
     labels:
@@ -81,6 +85,7 @@ services:
     container_name: whisparr
     image: ghcr.io/hotio/whisparr
     restart: unless-stopped
+    network_mode: host
     ports:
       - 6969:6969
     labels:
