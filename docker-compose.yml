@@ -11,7 +11,7 @@ services:
       traefik.http.services.prowlarr.loadbalancer.server.port: 9696
       traefik.http.routers.prowlarr.rule: Host(`prowlarr`)
     environment:
-      PUID: 997
+      PUID: 991
       PGID: 994
       UMASK: 002
       TZ: Europe/London
@@ -30,7 +30,7 @@ services:
       traefik.http.services.radarr.loadbalancer.server.port: 7878
       traefik.http.routers.radarr.rule: Host(`radarr`)
     environment:
-      PUID: 997
+      PUID: 991
       PGID: 994
       UMASK: 002
       TZ: Europe/London
@@ -51,7 +51,7 @@ services:
       traefik.http.services.sonarr.loadbalancer.server.port: 8989
       traefik.http.routers.sonarr.rule: Host(`sonarr`)
     environment:
-      PUID: 997
+      PUID: 991
       PGID: 994
       UMASK: 002
       TZ: Europe/London
@@ -73,7 +73,7 @@ services:
       traefik.http.services.lidarr.loadbalancer.server.port: 8686
       traefik.http.routers.lidarr.rule: Host(`lidarr`)
     environment:
-      PUID: 997
+      PUID: 991
       PGID: 994
       UMASK: 002
       TZ: Europe/London
@@ -94,7 +94,7 @@ services:
       traefik.http.services.whisparr.loadbalancer.server.port: 6969
       traefik.http.routers.whisparr.rule: Host(`whisparr`)
     environment:
-      PUID: 997
+      PUID: 991
       PGID: 994
       UMASK: 002
       TZ: Europe/London
