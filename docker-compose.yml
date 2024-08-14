@@ -10,6 +10,12 @@ services:
       traefik.enable: true
       traefik.http.services.prowlarr.loadbalancer.server.port: 9696
       traefik.http.routers.prowlarr.rule: Host(`prowlarr`)
+      traefik.http.routers.prowlarr.middlewares: prowlarr-ipallowlist
+      traefik.http.middlewares.prowlarr-ipallowlist.ipallowlist.sourcerange: >
+        2a00:23c8:bda0:b310::/64,
+        2a00:23c8:bda0:b311::/64,
+        10.10.0.0/16,
+        10.11.0.0/16
     environment:
       PUID: 991
       PGID: 994
@@ -29,6 +35,12 @@ services:
       traefik.enable: true
       traefik.http.services.radarr.loadbalancer.server.port: 7878
       traefik.http.routers.radarr.rule: Host(`radarr`)
+      traefik.http.routers.radarr.middlewares: radarr-ipallowlist
+      traefik.http.middlewares.radarr-ipallowlist.ipallowlist.sourcerange: >
+        2a00:23c8:bda0:b310::/64,
+        2a00:23c8:bda0:b311::/64,
+        10.10.0.0/16,
+        10.11.0.0/16
     environment:
       PUID: 991
       PGID: 994
@@ -50,6 +62,12 @@ services:
       traefik.enable: true
       traefik.http.services.sonarr.loadbalancer.server.port: 8989
       traefik.http.routers.sonarr.rule: Host(`sonarr`)
+      traefik.http.routers.sonarr.middlewares: sonarr-ipallowlist
+      traefik.http.middlewares.sonarr-ipallowlist.ipallowlist.sourcerange: >
+        2a00:23c8:bda0:b310::/64,
+        2a00:23c8:bda0:b311::/64,
+        10.10.0.0/16,
+        10.11.0.0/16
     environment:
       PUID: 991
       PGID: 994
@@ -72,6 +90,12 @@ services:
       traefik.enable: true
       traefik.http.services.lidarr.loadbalancer.server.port: 8686
       traefik.http.routers.lidarr.rule: Host(`lidarr`)
+      traefik.http.routers.lidarr.middlewares: lidarr-ipallowlist
+      traefik.http.middlewares.lidarr-ipallowlist.ipallowlist.sourcerange: >
+        2a00:23c8:bda0:b310::/64,
+        2a00:23c8:bda0:b311::/64,
+        10.10.0.0/16,
+        10.11.0.0/16
     environment:
       PUID: 991
       PGID: 994
@@ -93,6 +117,10 @@ services:
       traefik.enable: true
       traefik.http.services.whisparr.loadbalancer.server.port: 6969
       traefik.http.routers.whisparr.rule: Host(`whisparr`)
+      traefik.http.routers.whisparr.middlewares: whisparr-ipallowlist
+      traefik.http.middlewares.whisparr-ipallowlist.ipallowlist.sourcerange: >
+        2a00:23c8:bda0:b310::/64,
+        10.10.0.0/16
     environment:
       PUID: 991
       PGID: 994
