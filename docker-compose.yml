@@ -13,7 +13,9 @@ services:
       traefik.http.routers.prowlarr.middlewares: prowlarr-ipallowlist
       traefik.http.middlewares.prowlarr-ipallowlist.ipallowlist.sourcerange: >
         2a00:23c8:bda0:b310::/64,
-        10.10.0.0/16
+        10.10.0.0/16,
+        fdff:0205:2005::/123,
+        172.16.255.0/27
     environment:
       PUID: 991
       PGID: 994
@@ -36,7 +38,9 @@ services:
       traefik.http.routers.radarr.middlewares: radarr-ipallowlist
       traefik.http.middlewares.radarr-ipallowlist.ipallowlist.sourcerange: >
         2a00:23c8:bda0:b310::/64,
-        10.10.0.0/16
+        10.10.0.0/16,
+        fdff:0205:2005::/123,
+        172.16.255.0/27
     environment:
       PUID: 991
       PGID: 994
@@ -61,7 +65,9 @@ services:
       traefik.http.routers.sonarr.middlewares: sonarr-ipallowlist
       traefik.http.middlewares.sonarr-ipallowlist.ipallowlist.sourcerange: >
         2a00:23c8:bda0:b310::/64,
-        10.10.0.0/16
+        10.10.0.0/16,
+        fdff:0205:2005::/123,
+        172.16.255.0/27
     environment:
       PUID: 991
       PGID: 994
@@ -87,7 +93,9 @@ services:
       traefik.http.routers.lidarr.middlewares: lidarr-ipallowlist
       traefik.http.middlewares.lidarr-ipallowlist.ipallowlist.sourcerange: >
         2a00:23c8:bda0:b310::/64,
-        10.10.0.0/16
+        10.10.0.0/16,
+        fdff:0205:2005::/123,
+        172.16.255.0/27
     environment:
       PUID: 991
       PGID: 994
@@ -112,7 +120,9 @@ services:
       traefik.http.routers.whisparr.middlewares: whisparr-ipallowlist
       traefik.http.middlewares.whisparr-ipallowlist.ipallowlist.sourcerange: >
         2a00:23c8:bda0:b310::/64,
-        10.10.0.0/16
+        10.10.0.0/16,
+        fdff:0205:2005::/123,
+        172.16.255.0/27
     environment:
       PUID: 991
       PGID: 994
