@@ -16,7 +16,7 @@ services:
       UMASK: 002
       TZ: Europe/London
     volumes:
-      - /containers/prowlarr:/config
+      - /containers/servarr/prowlarr:/config
 
   radarr:
     container_name: radarr
@@ -35,7 +35,7 @@ services:
       UMASK: 002
       TZ: Europe/London
     volumes:
-      - /containers/radarr:/config
+      - /containers/servarr/radarr:/config
       - /downloads:/downloads
       - /tank/media/movies:/tank/media/movies
 
@@ -56,7 +56,7 @@ services:
       UMASK: 002
       TZ: Europe/London
     volumes:
-      - /containers/sonarr:/config
+      - /containers/servarr/sonarr:/config
       - /downloads:/downloads
       - /tank/media/tv:/tank/media/tv
       - /tank/media/sport:/tank/media/sport
@@ -78,7 +78,7 @@ services:
       UMASK: 002
       TZ: Europe/London
     volumes:
-      - /containers/lidarr:/config
+      - /containers/servarr/lidarr:/config
       - /downloads:/downloads
       - /tank/media/music:/tank/media/music
 
@@ -99,6 +99,6 @@ services:
       UMASK: 002
       TZ: Europe/London
     volumes:
-      - /containers/whisparr:/config
+      - /containers/servarr/whisparr:/config
       - /downloads:/downloads
       - /tank/media/xxx/videos:/tank/media/xxx/videos
