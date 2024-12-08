@@ -8,7 +8,6 @@ services:
       - proxy
     labels:
       traefik.enable: true
-      traefik.http.routers.prowlarr.rule: Host(`prowlarr`)
     environment:
       PUID: 991
       PGID: 994
@@ -26,7 +25,6 @@ services:
       - proxy
     labels:
       traefik.enable: true
-      traefik.http.routers.radarr.rule: Host(`radarr`)
     environment:
       PUID: 991
       PGID: 994
@@ -46,7 +44,6 @@ services:
       - proxy
     labels:
       traefik.enable: true
-      traefik.http.routers.sonarr.rule: Host(`sonarr`)
     environment:
       PUID: 991
       PGID: 994
@@ -67,7 +64,6 @@ services:
       - proxy
     labels:
       traefik.enable: true
-      traefik.http.routers.lidarr.rule: Host(`lidarr`)
     environment:
       PUID: 991
       PGID: 994
@@ -87,7 +83,6 @@ services:
       - proxy
     labels:
       traefik.enable: true
-      traefik.http.routers.whisparr.rule: Host(`whisparr`)
     environment:
       PUID: 991
       PGID: 994
