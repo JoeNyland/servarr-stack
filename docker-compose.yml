@@ -4,6 +4,7 @@ services:
     restart: unless-stopped
     networks:
       - default
+      - servarr
       - proxy
       - metrics
     labels:
@@ -22,6 +23,7 @@ services:
     restart: unless-stopped
     networks:
       - default
+      - servarr
       - proxy
       - metrics
     labels:
@@ -42,6 +44,7 @@ services:
     restart: unless-stopped
     networks:
       - default
+      - servarr
       - proxy
       - metrics
     labels:
@@ -63,6 +66,7 @@ services:
     restart: unless-stopped
     networks:
       - default
+      - servarr
       - proxy
       - metrics
     labels:
@@ -83,6 +87,7 @@ services:
     restart: unless-stopped
     networks:
       - default
+      - servarr
       - proxy
       - metrics
     labels:
@@ -103,3 +108,5 @@ networks:
     external: true
   metrics:
     external: true
+  servarr:
+    name: servarr
