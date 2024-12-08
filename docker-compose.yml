@@ -3,11 +3,11 @@ services:
     image: ghcr.io/hotio/prowlarr
     container_name: prowlarr
     restart: unless-stopped
-    networks:
-      - default
-      - proxy
+    ports:
+      - 9696:9696
     labels:
       traefik.enable: true
+      traefik.http.routers.prowlarr.rule: Host(`prowlarr`)
     environment:
       PUID: 991
       PGID: 994
@@ -20,11 +20,11 @@ services:
     container_name: radarr
     image: ghcr.io/hotio/radarr
     restart: unless-stopped
-    networks:
-      - default
-      - proxy
+    ports:
+      - 7878:7878
     labels:
       traefik.enable: true
+      traefik.http.routers.radarr.rule: Host(`radarr`)
     environment:
       PUID: 991
       PGID: 994
@@ -39,11 +39,11 @@ services:
     image: ghcr.io/hotio/sonarr
     container_name: sonarr
     restart: unless-stopped
-    networks:
-      - default
-      - proxy
+    ports:
+      - 8989:8989
     labels:
       traefik.enable: true
+      traefik.http.routers.sonarr.rule: Host(`sonarr`)
     environment:
       PUID: 991
       PGID: 994
@@ -59,11 +59,11 @@ services:
     container_name: lidarr
     image: ghcr.io/hotio/lidarr
     restart: unless-stopped
-    networks:
-      - default
-      - proxy
+    ports:
+      - 8686:8686
     labels:
       traefik.enable: true
+      traefik.http.routers.lidarr.rule: Host(`lidarr`)
     environment:
       PUID: 991
       PGID: 994
@@ -78,11 +78,11 @@ services:
     container_name: whisparr
     image: ghcr.io/hotio/whisparr
     restart: unless-stopped
-    networks:
-      - default
-      - proxy
+    ports:
+      - 6969:6969
     labels:
       traefik.enable: true
+      traefik.http.routers.whisparr.rule: Host(`whisparr`)
     environment:
       PUID: 991
       PGID: 994
@@ -92,7 +92,3 @@ services:
       - /containers/whisparr:/config
       - /downloads:/downloads
       - /tank/media/xxx/videos:/tank/media/xxx/videos
-
-networks:
-  proxy:
-    external: true
