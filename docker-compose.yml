@@ -1,5 +1,6 @@
 services:
   prowlarr:
+    container_name: servarr-prowlarr
     image: ghcr.io/hotio/prowlarr
     restart: unless-stopped
     networks:
@@ -19,6 +20,7 @@ services:
       - /containers/servarr-prowlarr:/config
 
   radarr:
+    container_name: servarr-radarr
     image: ghcr.io/hotio/radarr
     restart: unless-stopped
     networks:
@@ -40,6 +42,7 @@ services:
       - /tank/media/movies:/tank/media/movies
 
   sonarr:
+    container_name: servarr-sonarr
     image: ghcr.io/hotio/sonarr
     restart: unless-stopped
     networks:
@@ -62,6 +65,7 @@ services:
       - /tank/media/sport:/tank/media/sport
 
   lidarr:
+    container_name: servarr-lidarr
     image: ghcr.io/hotio/lidarr
     restart: unless-stopped
     networks:
@@ -83,6 +87,7 @@ services:
       - /tank/media/music:/tank/media/music
 
   whisparr:
+    container_name: servarr-whisparr
     image: ghcr.io/hotio/whisparr
     restart: unless-stopped
     networks:
