@@ -86,6 +86,27 @@ services:
       - /downloads:/downloads
       - /tank/media/music:/tank/media/music
 
+  readarr:
+    container_name: servarr-readarr
+    image: ghcr.io/hotio/readarr
+    restart: unless-stopped
+    networks:
+      servarr:
+      proxy:
+      metrics:
+    labels:
+      traefik.enable: true
+      traefik.http.routers.readarr.rule: Host(`readarr`)
+    environment:
+      PUID: 991
+      PGID: 994
+      UMASK: 002
+      TZ: Europe/London
+    volumes:
+      - /containers/servarr-readarr:/config
+      - /downloads:/downloads
+      - /tank/media/audiobooks:/tank/media/audiobooks
+
   whisparr:
     container_name: servarr-whisparr
     image: ghcr.io/hotio/whisparr
