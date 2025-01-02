@@ -4,7 +4,7 @@ services:
     image: ghcr.io/hotio/prowlarr
     restart: unless-stopped
     networks:
-      - servarr
+      - default
       - proxy
     labels:
       traefik.enable: true
@@ -22,7 +22,7 @@ services:
     image: ghcr.io/hotio/radarr
     restart: unless-stopped
     networks:
-      - servarr
+      - default
       - proxy
     labels:
       traefik.enable: true
@@ -42,7 +42,7 @@ services:
     image: ghcr.io/hotio/sonarr
     restart: unless-stopped
     networks:
-      - servarr
+      - default
       - proxy
     labels:
       traefik.enable: true
@@ -63,7 +63,7 @@ services:
     image: ghcr.io/hotio/lidarr
     restart: unless-stopped
     networks:
-      - servarr
+      - default
       - proxy
     labels:
       traefik.enable: true
@@ -83,7 +83,7 @@ services:
     image: ghcr.io/hotio/whisparr
     restart: unless-stopped
     networks:
-      - servarr
+      - default
       - proxy
     labels:
       traefik.enable: true
@@ -106,7 +106,7 @@ services:
       - 58261:58261     # BitTorrent port. Needs port forwarding to be setup on the router.
       - 58261:58261/udp # BitTorrent port. Needs port forwarding to be setup on the router.
     networks:
-      - servarr
+      - default
       - proxy
     environment:
       PUID: 991
@@ -126,7 +126,7 @@ services:
     image: ghcr.io/hotio/sabnzbd
     restart: unless-stopped
     networks:
-      - servarr
+      - default
       - proxy
     environment:
       PUID: 991
@@ -142,8 +142,8 @@ services:
       - /downloads:/downloads
 
 networks:
-  proxy:
-    external: true
-  servarr:
+  default:
     name: servarr
     enable_ipv6: true
+  proxy:
+    external: true
