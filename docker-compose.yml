@@ -98,29 +98,6 @@ services:
       - /downloads:/downloads
       - /tank/media/xxx/videos:/tank/media/xxx/videos
 
-  qbittorrent:
-    container_name: servarr-qbittorrent
-    image: ghcr.io/hotio/qbittorrent
-    restart: unless-stopped
-    ports:
-      - 58261:58261     # BitTorrent port. Needs port forwarding to be setup on the router.
-      - 58261:58261/udp # BitTorrent port. Needs port forwarding to be setup on the router.
-    networks:
-      - default
-      - proxy
-    environment:
-      PUID: 991
-      PGID: 994
-      UMASK: 002
-      TZ: Europe/London
-    labels:
-      traefik.enable: true
-      traefik.http.routers.qbittorrent.rule: Host(`qbittorrent`)
-      traefik.http.routers.qbittorrent.middlewares: trusted-ipallowlist
-    volumes:
-      - /containers/servarr-qbittorrent:/config
-      - /downloads:/downloads
-
   sabnzbd:
     container_name: servarr-sabnzbd
     image: ghcr.io/hotio/sabnzbd
