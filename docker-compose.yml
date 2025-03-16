@@ -133,6 +133,7 @@ services:
     networks:
       - default
       - proxy
+      - metrics
     environment:
       PUID: 991
       PGID: 994
