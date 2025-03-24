@@ -10,7 +10,7 @@ services:
     labels:
       traefik.enable: true
       traefik.http.routers.prowlarr.rule: Host(`prowlarr`)
-      traefik.http.routers.prowlarr.middlewares: trusted-ipallowlist
+      traefik.http.routers.prowlarr.middlewares: trusted-ipallowlist, authentik
     environment:
       PUID: 991
       PGID: 994
@@ -30,7 +30,7 @@ services:
     labels:
       traefik.enable: true
       traefik.http.routers.radarr.rule: Host(`radarr`)
-      traefik.http.routers.radarr.middlewares: trusted-ipallowlist
+      traefik.http.routers.radarr.middlewares: trusted-ipallowlist, authentik
     environment:
       PUID: 991
       PGID: 994
@@ -52,7 +52,7 @@ services:
     labels:
       traefik.enable: true
       traefik.http.routers.sonarr.rule: Host(`sonarr`)
-      traefik.http.routers.sonarr.middlewares: trusted-ipallowlist
+      traefik.http.routers.sonarr.middlewares: trusted-ipallowlist, authentik
     environment:
       PUID: 991
       PGID: 994
@@ -75,7 +75,7 @@ services:
     labels:
       traefik.enable: true
       traefik.http.routers.lidarr.rule: Host(`lidarr`)
-      traefik.http.routers.lidarr.middlewares: trusted-ipallowlist
+      traefik.http.routers.lidarr.middlewares: trusted-ipallowlist, authentik
     environment:
       PUID: 991
       PGID: 994
@@ -97,7 +97,7 @@ services:
     labels:
       traefik.enable: true
       traefik.http.routers.whisparr.rule: Host(`whisparr`)
-      traefik.http.routers.whisparr.middlewares: trusted-ipallowlist
+      traefik.http.routers.whisparr.middlewares: trusted-ipallowlist, authentik
     environment:
       PUID: 991
       PGID: 994
@@ -126,7 +126,7 @@ services:
     labels:
       traefik.enable: true
       traefik.http.routers.qbittorrent.rule: Host(`qbittorrent`)
-      traefik.http.routers.qbittorrent.middlewares: trusted-ipallowlist
+      traefik.http.routers.qbittorrent.middlewares: trusted-ipallowlist, authentik
     volumes:
       - /containers/servarr-qbittorrent:/config
       - /downloads:/downloads
@@ -147,7 +147,7 @@ services:
     labels:
       traefik.enable: true
       traefik.http.routers.sabnzbd.rule: Host(`sabnzbd`)
-      traefik.http.routers.sabnzbd.middlewares: trusted-ipallowlist
+      traefik.http.routers.sabnzbd.middlewares: trusted-ipallowlist, authentik
     volumes:
       - /containers/servarr-sabnzbd:/config
       - /downloads:/downloads
