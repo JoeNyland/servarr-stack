@@ -88,7 +88,7 @@ services:
 
   whisparr:
     container_name: servarr-whisparr
-    image: ghcr.io/hotio/whisparr
+    image: ghcr.io/hotio/whisparr:v3
     restart: unless-stopped
     networks:
       - default
@@ -106,7 +106,9 @@ services:
     volumes:
       - /containers/servarr-whisparr:/config
       - /downloads:/downloads
-      - /tank/media/xxx/videos:/tank/media/xxx/videos
+      - /tank/media/xxx/import:/tank/media/xxx/import
+      - /tank/media/xxx/movies:/tank/media/xxx/movies
+      - /tank/media/xxx/scenes:/tank/media/xxx/scenes
 
   qbittorrent:
     container_name: servarr-qbittorrent
