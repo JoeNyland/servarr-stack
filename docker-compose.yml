@@ -154,6 +154,35 @@ services:
       - /containers/servarr-sabnzbd:/config
       - /downloads:/downloads
 
+  tdarr:
+    image: ghcr.io/haveagitgat/tdarr
+    container_name: servarr-tdarr
+    restart: unless-stopped
+    networks:
+      proxy:
+      metrics:
+    environment:
+      PUID: 991 # media user
+      PGID: 994 # media group
+      TZ: Europe/London
+      UMASK_SET: 002
+      internalNode: true
+      nodeName: Server
+    labels:
+      traefik.enable: true
+      traefik.http.routers.tdarr.rule: Host(`tdarr`)
+      traefik.http.routers.tdarr.middlewares: trusted-ipallowlist, authentik
+    volumes:
+      - /containers/servarr-tdarr/configs:/app/configs
+      - /containers/servarr-tdarr/logs:/app/logs
+      - /containers/servarr-tdarr/server:/app/server
+      - /var/tmp/tdarr:/work # "Transcode Cache" - Should be excluded from snapshots
+      - /tank/media/movies:/tank/media/movies
+      - /tank/media/tv:/tank/media/tv
+      - /tank/media/xxx/scenes:/tank/media/xxx/scenes
+    devices:
+      - /dev/dri:/dev/dri
+
 networks:
   default:
     name: servarr
