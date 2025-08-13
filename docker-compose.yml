@@ -6,7 +6,6 @@ services:
     networks:
       - default
       - proxy
-      - metrics
     labels:
       traefik.enable: true
       traefik.http.routers.prowlarr.rule: Host(`prowlarr`)
@@ -26,7 +25,6 @@ services:
     networks:
       - default
       - proxy
-      - metrics
     labels:
       traefik.enable: true
       traefik.http.routers.radarr.rule: Host(`radarr`)
@@ -48,7 +46,6 @@ services:
     networks:
       - default
       - proxy
-      - metrics
     labels:
       traefik.enable: true
       traefik.http.routers.sonarr.rule: Host(`sonarr`)
@@ -71,7 +68,6 @@ services:
     networks:
       - default
       - proxy
-      - metrics
     labels:
       traefik.enable: true
       traefik.http.routers.lidarr.rule: Host(`lidarr`)
@@ -93,7 +89,6 @@ services:
     networks:
       - default
       - proxy
-      - metrics
     labels:
       traefik.enable: true
       traefik.http.routers.whisparr.rule: Host(`whisparr`)
@@ -187,7 +182,5 @@ networks:
   default:
     name: servarr
     enable_ipv6: true
-  metrics:
-    external: true
   proxy:
     external: true
