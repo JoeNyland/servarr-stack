@@ -135,7 +135,6 @@ services:
     networks:
       - default
       - proxy
-      - metrics
     environment:
       PUID: 991
       PGID: 994
@@ -155,7 +154,6 @@ services:
     restart: unless-stopped
     networks:
       proxy:
-      metrics:
     environment:
       PUID: 991 # media user
       PGID: 994 # media group
