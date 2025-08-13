@@ -9,7 +9,6 @@ services:
     labels:
       traefik.enable: true
       traefik.http.routers.prowlarr.rule: Host(`prowlarr`)
-      traefik.http.routers.prowlarr.middlewares: trusted-ipallowlist
     environment:
       PUID: 991
       PGID: 994
@@ -28,7 +27,6 @@ services:
     labels:
       traefik.enable: true
       traefik.http.routers.radarr.rule: Host(`radarr`)
-      traefik.http.routers.radarr.middlewares: trusted-ipallowlist
     environment:
       PUID: 991
       PGID: 994
@@ -49,7 +47,6 @@ services:
     labels:
       traefik.enable: true
       traefik.http.routers.sonarr.rule: Host(`sonarr`)
-      traefik.http.routers.sonarr.middlewares: trusted-ipallowlist
     environment:
       PUID: 991
       PGID: 994
@@ -71,7 +68,6 @@ services:
     labels:
       traefik.enable: true
       traefik.http.routers.lidarr.rule: Host(`lidarr`)
-      traefik.http.routers.lidarr.middlewares: trusted-ipallowlist
     environment:
       PUID: 991
       PGID: 994
@@ -92,7 +88,6 @@ services:
     labels:
       traefik.enable: true
       traefik.http.routers.whisparr.rule: Host(`whisparr`)
-      traefik.http.routers.whisparr.middlewares: trusted-ipallowlist
     environment:
       PUID: 991
       PGID: 994
@@ -123,7 +118,6 @@ services:
     labels:
       traefik.enable: true
       traefik.http.routers.qbittorrent.rule: Host(`qbittorrent`)
-      traefik.http.routers.qbittorrent.middlewares: trusted-ipallowlist
     volumes:
       - /containers/servarr-qbittorrent:/config
       - /downloads:/downloads
@@ -143,7 +137,6 @@ services:
     labels:
       traefik.enable: true
       traefik.http.routers.sabnzbd.rule: Host(`sabnzbd`)
-      traefik.http.routers.sabnzbd.middlewares: trusted-ipallowlist
     volumes:
       - /containers/servarr-sabnzbd:/config
       - /downloads:/downloads
@@ -164,7 +157,6 @@ services:
     labels:
       traefik.enable: true
       traefik.http.routers.tdarr.rule: Host(`tdarr`)
-      traefik.http.routers.tdarr.middlewares: trusted-ipallowlist
     volumes:
       - /containers/servarr-tdarr/configs:/app/configs
       - /containers/servarr-tdarr/logs:/app/logs
